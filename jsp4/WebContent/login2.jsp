@@ -24,11 +24,19 @@ function checkValue(){
 	}
 	return true;
 }
+function formSubmit(){
+	var param={};
+	param["id"]=document.getElementById("id").value;
+	param["pwd"]=document.getElementById("pwd").value;
+	
+	alert(param);
+	
+} 
 </script>
 <form method='get' action="/login_ok.jsp" onsubmit="return checkValue()">
 아이디 : <input type="text" name="id" id="id"><br>
 비밀번호 : <input type="password" name="pwd" id="pwd"><br>
-<input type="submit" value="login"> 
+<input type="button" value="login" onclick="formSubmit()"> 
 </form>
 </body>
 </html>

@@ -7,6 +7,7 @@
 <title>Login</title>
 </head>
 <body>
+<%%>
 <!-- 수정수정수정!! -->
 <script>
 function checkValue(){
@@ -15,7 +16,7 @@ function checkValue(){
 	if(id.value.trim()==""){
 		alert("id를 입력해주세요.");
 		id.focus();
-		return false;
+		return false; 
 	}
 	
 	if(pwd.value.trim()==""){
@@ -25,11 +26,28 @@ function checkValue(){
 	}
 	return true;
 }
+	function formSubmit(){
+		var param={};
+		param["id"]=document.getElementById("id").value;
+		param["pwd"]=document.getElementById("pwd").value;
+		
+		//alert(JSON.stringify(param));
+		
+		param = [{"id" : "test", "pwd":"testttte"},
+			{"id" : "test222", "pwd":"testttte222"}];
+		alert(param[1].id);
+		alert(param[1].pwd);
+		
+
+		
+		
+		
+	} 
 </script>
 <form method='post' action="/test.login" onsubmit="return checkValue()">
 아이디 : <input type="text" name="id" id="id"><br>
 비밀번호 : <input type="password" name="pwd" id="pwd"><br>
-<input type="submit" value="login"> 
+<input type="button" value="login" onclick="formSubmit()"> 
 </form>
 </body>
 </html>
